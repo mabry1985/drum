@@ -17,7 +17,6 @@ class PadManager {
     func createPadObjectArray(_ array: [[UIView]]) -> [[PadModel?]]{
         for i in 0...3 {
             for j in 0...3 {
-                print(array[i][j].accessibilityLabel!.first!)
                 let pad = PadModel(index: [i, j],  pad: UIView(), color: defaultPad.padColor, sampleName: defaultPad.sampleName[i][j])
                 padObjectArray[i][j] = pad
             }

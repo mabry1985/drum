@@ -33,35 +33,39 @@ class MainViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     
     var padManager = PadManager()
+    var themeManager = ThemeManager()
+    var padAnimationManager = PadAnimationManager()
     
-    var padArray = [[UIView]]()
-    
+    var padViewArray = [[UIView]]()
     var pads = [[PadModel?]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let padArray = [
+        padViewArray = [
             [pad00, pad01, pad02, pad03],
             [pad10, pad11, pad12, pad13],
             [pad20, pad21, pad22, pad23],
             [pad30, pad31, pad32, pad33]
-            
         ]
         
-        pads = padManager.createPadObjectArray(padArray as! [[UIView]])
-
+        pads = padManager.createPadObjectArray(padViewArray)
         
+        themeManager.setDefaultTheme(pad: padViewArray, padModel: pads as! [[PadModel]], background: backgroundImage)
     }
+        
+ 
     
     @IBAction func padPressed(_ sender: UIButton) {
-        print(sender.currentTitle!)
-    }
-    
-    
-    func createPadArray() {
+        let i = Int(String((sender.currentTitle?.first)!))!
+        let j = Int(String((sender.currentTitle?.last)!))!
         
+        padAnimationManager.tapBlink(pad: padViewArray[i][j], padModel: pads[i][j]!)
+        
+        // print(pads[i][j]?.sampleName ?? "Unwrapped Nuthin")
+    
     }
+    
 
 }
 

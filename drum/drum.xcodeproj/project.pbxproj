@@ -32,6 +32,8 @@
 		2CD2DAD82463579E00CE83E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2DAD62463579E00CE83E9 /* Main.storyboard */; };
 		2CD2DADA246357A500CE83E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2DAD9246357A500CE83E9 /* Assets.xcassets */; };
 		2CD2DADD246357A500CE83E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2DADB246357A500CE83E9 /* LaunchScreen.storyboard */; };
+		2CD4D9632463D0BF0041DD64 /* PadAnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4D9622463D0BF0041DD64 /* PadAnimationManager.swift */; };
+		2CD4D9652463D25F0041DD64 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4D9642463D25F0041DD64 /* ThemeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		2CD2DAD9246357A500CE83E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD2DADC246357A500CE83E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD2DADE246357A500CE83E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CD4D9622463D0BF0041DD64 /* PadAnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadAnimationManager.swift; sourceTree = "<group>"; };
+		2CD4D9642463D25F0041DD64 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				2C561F5524636AA3004962AD /* PadManager.swift */,
 				2C561F5724638EC7004962AD /* PadModel.swift */,
 				2C561F592463A98E004962AD /* DefaultModel.swift */,
+				2CD4D9622463D0BF0041DD64 /* PadAnimationManager.swift */,
+				2CD4D9642463D25F0041DD64 /* ThemeManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,8 +260,10 @@
 				2C561F5824638EC7004962AD /* PadModel.swift in Sources */,
 				2CD2DAD52463579E00CE83E9 /* MainViewController.swift in Sources */,
 				2CD2DAD12463579E00CE83E9 /* AppDelegate.swift in Sources */,
+				2CD4D9652463D25F0041DD64 /* ThemeManager.swift in Sources */,
 				2C561F5A2463A98E004962AD /* DefaultModel.swift in Sources */,
 				2CD2DAD32463579E00CE83E9 /* SceneDelegate.swift in Sources */,
+				2CD4D9632463D0BF0041DD64 /* PadAnimationManager.swift in Sources */,
 				2C561F5624636AA3004962AD /* PadManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
