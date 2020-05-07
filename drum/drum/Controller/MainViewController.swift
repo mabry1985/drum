@@ -60,7 +60,11 @@ class MainViewController: UIViewController {
         let i = Int(String((sender.currentTitle?.first)!))!
         let j = Int(String((sender.currentTitle?.last)!))!
         
-        padAnimationManager.tapBlink(pad: padViewArray[i][j], padModel: pads[i][j]!)
+        padAnimationManager.tapBlink(for: padViewArray[i][j])
+        
+        if (padAnimationManager.partyLights) {
+            padAnimationManager.animateXY(for: padViewArray)
+        }
         
         // print(pads[i][j]?.sampleName ?? "Unwrapped Nuthin")
     

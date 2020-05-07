@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C561F5624636AA3004962AD /* PadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C561F5524636AA3004962AD /* PadManager.swift */; };
 		2C561F5824638EC7004962AD /* PadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C561F5724638EC7004962AD /* PadModel.swift */; };
-		2C561F5A2463A98E004962AD /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C561F592463A98E004962AD /* DefaultModel.swift */; };
+		2C561F5A2463A98E004962AD /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C561F592463A98E004962AD /* DefaultValues.swift */; };
 		2C561F6F2463AC6E004962AD /* Kick04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2C561F6B2463AC6E004962AD /* Kick04.wav */; };
 		2C561F702463AC6E004962AD /* Kick01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2C561F6C2463AC6E004962AD /* Kick01.wav */; };
 		2C561F712463AC6E004962AD /* Kick02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2C561F6D2463AC6E004962AD /* Kick02.wav */; };
@@ -34,12 +34,13 @@
 		2CD2DADD246357A500CE83E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2DADB246357A500CE83E9 /* LaunchScreen.storyboard */; };
 		2CD4D9632463D0BF0041DD64 /* PadAnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4D9622463D0BF0041DD64 /* PadAnimationManager.swift */; };
 		2CD4D9652463D25F0041DD64 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4D9642463D25F0041DD64 /* ThemeManager.swift */; };
+		2CD4D9682463DBCF0041DD64 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4D9672463DBCF0041DD64 /* UIColorExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C561F5524636AA3004962AD /* PadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadManager.swift; sourceTree = "<group>"; };
 		2C561F5724638EC7004962AD /* PadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadModel.swift; sourceTree = "<group>"; };
-		2C561F592463A98E004962AD /* DefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
+		2C561F592463A98E004962AD /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
 		2C561F6B2463AC6E004962AD /* Kick04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Kick04.wav; sourceTree = "<group>"; };
 		2C561F6C2463AC6E004962AD /* Kick01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Kick01.wav; sourceTree = "<group>"; };
 		2C561F6D2463AC6E004962AD /* Kick02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Kick02.wav; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		2CD2DADE246357A500CE83E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CD4D9622463D0BF0041DD64 /* PadAnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadAnimationManager.swift; sourceTree = "<group>"; };
 		2CD4D9642463D25F0041DD64 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		2CD4D9672463DBCF0041DD64 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		2CD2DACF2463579E00CE83E9 /* drum */ = {
 			isa = PBXGroup;
 			children = (
+				2CD4D9662463DBA90041DD64 /* Extensions */,
 				2CD2DAE52463671F00CE83E9 /* Model */,
 				2CD2DAE4246366D300CE83E9 /* View */,
 				2CD2DAE62463672F00CE83E9 /* Controller */,
@@ -155,7 +158,7 @@
 			children = (
 				2C561F5524636AA3004962AD /* PadManager.swift */,
 				2C561F5724638EC7004962AD /* PadModel.swift */,
-				2C561F592463A98E004962AD /* DefaultModel.swift */,
+				2C561F592463A98E004962AD /* DefaultValues.swift */,
 				2CD4D9622463D0BF0041DD64 /* PadAnimationManager.swift */,
 				2CD4D9642463D25F0041DD64 /* ThemeManager.swift */,
 			);
@@ -168,6 +171,14 @@
 				2CD2DAD42463579E00CE83E9 /* MainViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2CD4D9662463DBA90041DD64 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CD4D9672463DBCF0041DD64 /* UIColorExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +272,8 @@
 				2CD2DAD52463579E00CE83E9 /* MainViewController.swift in Sources */,
 				2CD2DAD12463579E00CE83E9 /* AppDelegate.swift in Sources */,
 				2CD4D9652463D25F0041DD64 /* ThemeManager.swift in Sources */,
-				2C561F5A2463A98E004962AD /* DefaultModel.swift in Sources */,
+				2CD4D9682463DBCF0041DD64 /* UIColorExt.swift in Sources */,
+				2C561F5A2463A98E004962AD /* DefaultValues.swift in Sources */,
 				2CD2DAD32463579E00CE83E9 /* SceneDelegate.swift in Sources */,
 				2CD4D9632463D0BF0041DD64 /* PadAnimationManager.swift in Sources */,
 				2C561F5624636AA3004962AD /* PadManager.swift in Sources */,

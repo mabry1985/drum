@@ -11,12 +11,22 @@ import UIKit
 class PadAnimationManager {
     var themeManager = ThemeManager()
     
+    var partyLights = true
     
-    func tapBlink(pad: UIView, padModel: PadModel ) {
-        pad.backgroundColor = themeManager.hexStringToUIColor(hex: "#FFFFFF")
+    func tapBlink(for pad: UIView) {
+        let prevColor = pad.backgroundColor
+        pad.backgroundColor = pad.backgroundColor?.lighter(by: 30)
         let secondsToDelay = 0.3
         DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
-            pad.backgroundColor = self.themeManager.hexStringToUIColor(hex: padModel.color)
+            pad.backgroundColor = prevColor
+        }
+        
+    }
+    
+    func animateXY(for pads: [[UIView]]) {
+        for i in 0...3 {
+            let pad = pads[0][i]
+            tapBlink(for: pad)
         }
     }
     

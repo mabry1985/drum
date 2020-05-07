@@ -8,11 +8,11 @@
 
 import UIKit
 
-class DefaultValues {
+struct DefaultValues {
     
-    var padColor = "#79BAC1"
+    var padColor = "#2A7886"
     
-    var background = "#2A7886"
+    var background = "#79BAC1"
     
     var sampleName = [
         ["OpHat1", "OpHat02", "ClHat01", "ClHat02"],
