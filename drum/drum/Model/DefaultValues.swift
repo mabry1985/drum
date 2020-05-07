@@ -12,7 +12,7 @@ struct DefaultValues {
     
     var padColor = "#2A7886"
     
-    var background = "#79BAC1"
+    var background = "#3E3E3E"
     
     var sampleName = [
         ["OpHat1", "OpHat02", "ClHat01", "ClHat02"],

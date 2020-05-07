@@ -11,7 +11,26 @@ import UIKit
 class PadAnimationManager {
     var themeManager = ThemeManager()
     
-    var xyAnimate = true
+    enum Mode {
+        case xyAnimate
+        case partyLights
+        case blink
+    }
+    
+    var animationMode = Mode.blink
+    
+    func animatePads(pad: UIView, pads: [[UIView]], currentPad: [Int], padModel: PadModel, padModels: [[PadModel]]){
+        switch animationMode {
+        case .blink:
+            tapBlink(for: pad, padModel: padModel)
+        case .partyLights:
+            partyLights(for: pads)
+        case .xyAnimate:
+            animateXY(pads: pads, padModels: padModels, currentPad: currentPad)
+        default:
+            break
+        }
+    }
     
     func tapBlink(for pad: UIView, padModel: PadModel) {
         pad.backgroundColor = padModel.lightColor
@@ -60,6 +79,22 @@ class PadAnimationManager {
                 counter -= 1
             }
         }
+    }
+    
+    func partyLights(for pads: [[UIView]]){
+
+        var count = 0
         
+        while count < 17 {
+            let ii = Int.random(in: 0...3)
+            let jj = Int.random(in: 0...3)
+            pads[ii][jj].backgroundColor = UIColor.random()
+            print(count)
+            count += 1
+        }
+        
+        count = 0
+        
+
     }
 }
