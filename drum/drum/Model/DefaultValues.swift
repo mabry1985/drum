@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DefaultModel {
+class DefaultValues {
     
     var padColor = "#79BAC1"
     
