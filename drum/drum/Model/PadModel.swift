@@ -10,11 +10,17 @@ import UIKit
 
 struct PadModel {
     
+    var themeManager = ThemeManager()
+    
     let index: [Int]
     
     let pad: UIView
     
     let color: String
+    
+    var lightColor: UIColor {
+        themeManager.hexStringToUIColor(hex: color).lighter(by: 30)!
+    }
     
     let sampleName: String
     

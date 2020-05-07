@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C49750F2464AB9C009817E8 /* CGFloatExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C49750E2464AB9C009817E8 /* CGFloatExt.swift */; };
 		2C561F5624636AA3004962AD /* PadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C561F5524636AA3004962AD /* PadManager.swift */; };
 		2C561F5824638EC7004962AD /* PadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C561F5724638EC7004962AD /* PadModel.swift */; };
 		2C561F5A2463A98E004962AD /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C561F592463A98E004962AD /* DefaultValues.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C49750E2464AB9C009817E8 /* CGFloatExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExt.swift; sourceTree = "<group>"; };
 		2C561F5524636AA3004962AD /* PadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadManager.swift; sourceTree = "<group>"; };
 		2C561F5724638EC7004962AD /* PadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadModel.swift; sourceTree = "<group>"; };
 		2C561F592463A98E004962AD /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				2CD4D9672463DBCF0041DD64 /* UIColorExt.swift */,
+				2C49750E2464AB9C009817E8 /* CGFloatExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				2CD4D9652463D25F0041DD64 /* ThemeManager.swift in Sources */,
 				2CD4D9682463DBCF0041DD64 /* UIColorExt.swift in Sources */,
 				2C561F5A2463A98E004962AD /* DefaultValues.swift in Sources */,
+				2C49750F2464AB9C009817E8 /* CGFloatExt.swift in Sources */,
 				2CD2DAD32463579E00CE83E9 /* SceneDelegate.swift in Sources */,
 				2CD4D9632463D0BF0041DD64 /* PadAnimationManager.swift in Sources */,
 				2C561F5624636AA3004962AD /* PadManager.swift in Sources */,

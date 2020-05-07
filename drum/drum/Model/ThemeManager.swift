@@ -42,7 +42,6 @@ class ThemeManager {
                 pad[i][j].backgroundColor = hexStringToUIColor(hex: padModel[i][j].color)
             }
         }
-        
     }
     
 }

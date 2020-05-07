@@ -52,6 +52,7 @@ class MainViewController: UIViewController {
         pads = padManager.createPadObjectArray(padViewArray)
         
         themeManager.setDefaultTheme(pad: padViewArray, padModel: pads as! [[PadModel]], background: backgroundImage)
+        
     }
         
  
@@ -59,11 +60,10 @@ class MainViewController: UIViewController {
     @IBAction func padPressed(_ sender: UIButton) {
         let i = Int(String((sender.currentTitle?.first)!))!
         let j = Int(String((sender.currentTitle?.last)!))!
+        padAnimationManager.tapBlink(for: padViewArray[i][j], padModel: pads[i][j]!)
         
-        padAnimationManager.tapBlink(for: padViewArray[i][j])
-        
-        if (padAnimationManager.partyLights) {
-            padAnimationManager.animateXY(for: padViewArray)
+        if (padAnimationManager.xyAnimate) {
+            padAnimationManager.animateXY(pads: padViewArray, padModels: pads as! [[PadModel]], currentPad: [i, j])
         }
         
         // print(pads[i][j]?.sampleName ?? "Unwrapped Nuthin")

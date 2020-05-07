@@ -11,23 +11,55 @@ import UIKit
 class PadAnimationManager {
     var themeManager = ThemeManager()
     
-    var partyLights = true
+    var xyAnimate = true
     
-    func tapBlink(for pad: UIView) {
-        let prevColor = pad.backgroundColor
-        pad.backgroundColor = pad.backgroundColor?.lighter(by: 30)
+    func tapBlink(for pad: UIView, padModel: PadModel) {
+        pad.backgroundColor = padModel.lightColor
         let secondsToDelay = 0.3
         DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
-            pad.backgroundColor = prevColor
+            pad.backgroundColor = self.themeManager.hexStringToUIColor(hex: padModel.color)
         }
         
     }
     
-    func animateXY(for pads: [[UIView]]) {
-        for i in 0...3 {
-            let pad = pads[0][i]
-            tapBlink(for: pad)
+    func animateXY(pads: [[UIView]], padModels: [[PadModel]], currentPad: [Int]) {
+        let currentX = currentPad[0]
+        let currentY = currentPad[1]
+        
+        if (currentX < 4) {
+            var counter = currentX
+            while counter < 4 {
+                tapBlink(for: pads[counter][currentY], padModel: padModels[currentX][currentY])
+                counter += 1
+            }
         }
+
+        if (currentY < 4) {
+            var counter = currentY
+            while counter < 4 {
+                tapBlink(for: pads[currentX][counter], padModel: padModels[currentX][currentY])
+                print("im in y loop")
+                counter += 1
+            }
+        }
+        
+        if (currentX > 0) {
+            var counter = currentX
+            while counter >= 0 {
+                tapBlink(for: pads[counter][currentY], padModel: padModels[currentX][currentY])
+                print("im in x loop")
+                counter -= 1
+            }
+        }
+
+        if (currentY > 0) {
+            var counter = currentY
+            while counter >= 0 {
+                tapBlink(for: pads[currentX][counter], padModel: padModels[currentX][currentY])
+                print("im in y loop")
+                counter -= 1
+            }
+        }
+        
     }
-    
 }
