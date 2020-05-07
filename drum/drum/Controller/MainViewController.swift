@@ -30,17 +30,38 @@ class MainViewController: UIViewController {
     @IBOutlet weak var pad32: UIView!
     @IBOutlet weak var pad33: UIView!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     
+    var padManager = PadManager()
+    
+    var padArray = [[UIView]]()
+    
+    var pads = [[PadModel?]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let padArray = [
+            [pad00, pad01, pad02, pad03],
+            [pad10, pad11, pad12, pad13],
+            [pad20, pad21, pad22, pad23],
+            [pad30, pad31, pad32, pad33]
+            
+        ]
+        
+        pads = padManager.createPadObjectArray(padArray as! [[UIView]])
+
+        
     }
     
     @IBAction func padPressed(_ sender: UIButton) {
         print(sender.currentTitle!)
     }
-
+    
+    
+    func createPadArray() {
+        
+    }
 
 }
 
