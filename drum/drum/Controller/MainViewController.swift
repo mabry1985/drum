@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func padPressed(_ sender: UIButton) {
-        print(sender.titleLabel!)
+        print(sender.currentTitle!)
     }
 
 
