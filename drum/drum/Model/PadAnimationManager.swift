@@ -82,9 +82,7 @@ class PadAnimationManager {
     }
     
     func partyLights(for pads: [[UIView]]){
-
         var count = 0
-        
         while count < 17 {
             let ii = Int.random(in: 0...3)
             let jj = Int.random(in: 0...3)
@@ -92,9 +90,6 @@ class PadAnimationManager {
             print(count)
             count += 1
         }
-        
-        count = 0
-        
-
     }
+    
 }

@@ -479,6 +479,34 @@
                                     <constraint firstItem="jWv-k3-Rsj" firstAttribute="centerX" secondItem="1d3-j9-e1q" secondAttribute="centerX" id="xPb-fs-Gh1"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gro-qp-ZkG" userLabel="XY Switch View">
+                                <rect key="frame" x="933" y="228" width="112" height="71"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="eQX-2B-3Ch">
+                                        <rect key="frame" x="31.5" y="32" width="51" height="31"/>
+                                        <accessibility key="accessibilityConfiguration" label="XY Mode Switch"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="9jp-IO-KNW"/>
+                                            <constraint firstAttribute="width" constant="49" id="aCN-33-R1f"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.1647058824" green="0.47058823529999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" red="0.47450980390000003" green="0.72941176470000002" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XY Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u9b-fn-snr">
+                                        <rect key="frame" x="15" y="8" width="82" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eQX-2B-3Ch" firstAttribute="centerX" secondItem="Gro-qp-ZkG" secondAttribute="centerX" id="Liu-MU-7bp"/>
+                                    <constraint firstAttribute="bottom" secondItem="eQX-2B-3Ch" secondAttribute="bottom" constant="8" id="TXE-81-Yqt"/>
+                                    <constraint firstItem="eQX-2B-3Ch" firstAttribute="centerX" secondItem="u9b-fn-snr" secondAttribute="centerX" id="UPc-il-TFO"/>
+                                    <constraint firstItem="eQX-2B-3Ch" firstAttribute="top" secondItem="u9b-fn-snr" secondAttribute="bottom" constant="8" id="tll-FK-0iQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -487,11 +515,13 @@
                             <constraint firstItem="g0y-0d-3GN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5a7-eU-Lwk"/>
                             <constraint firstItem="6BL-CY-Waq" firstAttribute="top" secondItem="UNd-ta-nBI" secondAttribute="top" id="6RC-d7-Pf5"/>
                             <constraint firstItem="6BL-CY-Waq" firstAttribute="leading" secondItem="UNd-ta-nBI" secondAttribute="trailing" constant="38" id="AEh-SS-OvC"/>
+                            <constraint firstItem="Gro-qp-ZkG" firstAttribute="leading" secondItem="KOE-IY-CIy" secondAttribute="trailing" constant="8" id="GV7-eO-QHK"/>
                             <constraint firstItem="KOE-IY-CIy" firstAttribute="leading" secondItem="UNd-ta-nBI" secondAttribute="trailing" constant="38" id="JM2-cp-rwk"/>
                             <constraint firstItem="UNd-ta-nBI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="LTE-vD-rmP"/>
                             <constraint firstItem="KOE-IY-CIy" firstAttribute="top" secondItem="6BL-CY-Waq" secondAttribute="bottom" constant="19" id="LeP-T9-Nu5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UZO-yY-Gu6" secondAttribute="bottom" constant="65" id="ONm-WG-gh6"/>
                             <constraint firstItem="6BL-CY-Waq" firstAttribute="leading" secondItem="KOE-IY-CIy" secondAttribute="leading" id="PcJ-Ey-9zA"/>
+                            <constraint firstItem="Gro-qp-ZkG" firstAttribute="top" secondItem="6BL-CY-Waq" secondAttribute="bottom" constant="19" id="YjG-Pc-kao"/>
                             <constraint firstAttribute="bottom" secondItem="6BL-CY-Waq" secondAttribute="bottom" constant="601" id="Yqa-8i-v0d"/>
                             <constraint firstItem="g0y-0d-3GN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aFf-P6-zMl"/>
                             <constraint firstItem="g0y-0d-3GN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cMg-zv-HZm"/>
@@ -522,6 +552,7 @@
                         <outlet property="pad33" destination="vRj-XP-pgU" id="E9O-sx-5mH"/>
                         <outlet property="partyModeSwitch" destination="jWv-k3-Rsj" id="EPf-Uf-k9m"/>
                         <outlet property="screenHeaderLabel" destination="ZOJ-K2-1yQ" id="VgM-2w-maU"/>
+                        <outlet property="xyModeSwitch" destination="eQX-2B-3Ch" id="llh-8p-YGo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

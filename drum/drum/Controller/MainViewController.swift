@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var pad33: UIView!
     
     @IBOutlet weak var partyModeSwitch: UISwitch!
+    @IBOutlet weak var xyModeSwitch: UISwitch!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var screenHeaderLabel: UILabel!
@@ -59,7 +60,8 @@ class MainViewController: UIViewController {
         themeManager.setDefaultTheme(pad: padViewArray, padModel: pads as! [[PadModel]], background: backgroundImage)
         
         partyModeSwitch.addTarget(self, action: #selector(switchStateChanged), for: .valueChanged)
-        
+        xyModeSwitch.addTarget(self, action: #selector(switchStateChanged), for: .valueChanged)
+
         screenHeaderLabel.text = "drum \(versionNumber)"
     }
     
@@ -79,8 +81,14 @@ class MainViewController: UIViewController {
         if (switchState.isOn) {
             switch switchState.accessibilityLabel! {
             case "Party Mode Switch":
+                xyModeSwitch.isOn = false
+                padAnimationManager.partyLights(for: padViewArray)
                 padAnimationManager.animationMode = .partyLights
                 screenHeaderLabel.text = "PARTY MODE!!!!"
+            case "XY Mode Switch":
+                themeManager.setDefaultTheme(pad: padViewArray, padModel: pads as! [[PadModel]], background: backgroundImage)
+                padAnimationManager.animationMode = .xyAnimate
+                partyModeSwitch.isOn = false
             default:
                 break
             }
@@ -90,6 +98,9 @@ class MainViewController: UIViewController {
                 padAnimationManager.animationMode = .blink
                 themeManager.setDefaultTheme(pad: padViewArray, padModel: pads as! [[PadModel]], background: backgroundImage)
                 screenHeaderLabel.text = "drum \(versionNumber)"
+            case "XY Mode Switch":
+                padAnimationManager.animationMode = .blink
+                
             default:
                 break
             }
