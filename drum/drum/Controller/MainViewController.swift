@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     @IBOutlet weak var pad00: UIView!
     @IBOutlet weak var pad01: UIView!
     @IBOutlet weak var pad02: UIView!
@@ -30,7 +30,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var pad32: UIView!
     @IBOutlet weak var pad33: UIView!
     
+    @IBOutlet weak var partyModeSwitch: UISwitch!
+    
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var screenHeaderLabel: UILabel!
     
     var padManager = PadManager()
     var themeManager = ThemeManager()
@@ -38,6 +41,8 @@ class MainViewController: UIViewController {
     
     var padViewArray = [[UIView]]()
     var pads = [[PadModel?]]()
+    
+    let versionNumber = "v0.0.2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +57,13 @@ class MainViewController: UIViewController {
         pads = padManager.createPadObjectArray(padViewArray)
         
         themeManager.setDefaultTheme(pad: padViewArray, padModel: pads as! [[PadModel]], background: backgroundImage)
-    }
         
- 
+        partyModeSwitch.addTarget(self, action: #selector(switchStateChanged), for: .valueChanged)
+        
+        screenHeaderLabel.text = "drum \(versionNumber)"
+    }
+    
+    
     
     @IBAction func padPressed(_ sender: UIButton) {
         let i = Int(String((sender.currentTitle?.first)!))!
@@ -62,10 +71,34 @@ class MainViewController: UIViewController {
         
         padAnimationManager.animatePads(pad: padViewArray[i][j], pads: padViewArray, currentPad: [i, j], padModel: pads[i][j]!, padModels: pads as! [[PadModel]])
         
-        // print(pads[i][j]?.sampleName ?? "Unwrapped Nuthin")
-    
     }
     
 
+    @objc func switchStateChanged(switchState: UISwitch) {
+        print(switchState.accessibilityLabel!)
+        if (switchState.isOn) {
+            switch switchState.accessibilityLabel! {
+            case "Party Mode Switch":
+                padAnimationManager.animationMode = .partyLights
+                screenHeaderLabel.text = "PARTY MODE!!!!"
+            default:
+                break
+            }
+        } else {
+            switch switchState.accessibilityLabel {
+            case "Party Mode Switch":
+                padAnimationManager.animationMode = .blink
+                themeManager.setDefaultTheme(pad: padViewArray, padModel: pads as! [[PadModel]], background: backgroundImage)
+                screenHeaderLabel.text = "drum \(versionNumber)"
+            default:
+                break
+            }
+            
+            
+        }
+        
+        
+        
+    }
+    
 }
-
